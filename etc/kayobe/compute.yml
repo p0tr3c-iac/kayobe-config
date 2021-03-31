@@ -65,7 +65,17 @@
 
 # List of compute volume groups. See mrlesmithjr.manage-lvm role for
 # format.
-#compute_lvm_groups:
+# compute_lvm_groups:
+#   - vgname: os-vg0
+#         disks:
+#           - /dev/sdb
+#         create: true
+#         lvnames:
+#           - lvname: libvirt
+#             size: 100%
+#             create: true
+#             filesystem: xfs1
+#     manage_lvm: true
 
 # Default list of compute volume groups. See mrlesmithjr.manage-lvm role for
 # format.

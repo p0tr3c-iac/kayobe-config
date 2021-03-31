@@ -62,7 +62,7 @@
 # Kolla configuration.
 
 # Kolla base container image distribution. Default is 'centos'.
-#kolla_base_distro:
+kolla_base_distro: ubuntu
 
 # Kolla container image type: binary or source. Default is 'binary'.
 #kolla_install_type:
@@ -84,7 +84,7 @@
 
 # Kolla OpenStack release version. This should be a Docker image tag.
 # Default is {{ openstack_release }}.
-#kolla_openstack_release:
+kolla_openstack_release: victoria
 
 # Docker tag applied to built container images. Default is
 # {{ kolla_openstack_release }}.
@@ -235,7 +235,7 @@
 #kolla_enable_gnocchi:
 #kolla_enable_grafana:
 #kolla_enable_haproxy:
-#kolla_enable_heat:
+kolla_enable_heat: no
 #kolla_enable_horizon:
 #kolla_enable_horizon_blazar:
 #kolla_enable_horizon_cloudkitty:
@@ -304,7 +304,7 @@
 #kolla_enable_nova_ssh:
 #kolla_enable_octavia:
 #kolla_enable_onos:
-#kolla_enable_openstack_core:
+kolla_enable_openstack_core: yes
 #kolla_enable_openvswitch:
 #kolla_enable_osprofiler:
 #kolla_enable_outward_rabbitmq:

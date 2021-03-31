@@ -5,42 +5,43 @@
 # Network role to network mappings.
 
 # Name of the network used for admin access to the overcloud
-#admin_oc_net_name:
+admin_oc_net_name: admin
 
 # Name of the network used by the seed to manage the bare metal overcloud
 # hosts via their out-of-band management controllers.
-#oob_oc_net_name:
+oob_oc_net_name: internal
 
 # Name of the network used by the seed to provision the bare metal overcloud
 # hosts.
-#provision_oc_net_name:
+provision_oc_net_name: internal
 
 # Name of the network used by the overcloud hosts to manage the bare metal
 # compute hosts via their out-of-band management controllers.
-#oob_wl_net_name:
+oob_wl_net_name: internal
 
 # Name of the network used by the overcloud hosts to provision the bare metal
 # workload hosts.
-#provision_wl_net_name:
+provision_wl_net_name: internal
 
 # Name of the network used to expose the internal OpenStack API endpoints.
-#internal_net_name:
+internal_net_name: internal
 
 # List of names of networks used to provide external network access via
 # Neutron.
 # Deprecated name: external_net_name
 # If external_net_name is defined, external_net_names will default to a list
 # containing one item, external_net_name.
-#external_net_names:
+external_net_names: 
+  - internal
 
 # Name of the network used to expose the public OpenStack API endpoints.
-#public_net_name:
+public_net_name: internal
 
 # Name of the network used by Neutron to carry tenant overlay network traffic.
 #tunnel_net_name:
 
 # Name of the network used to carry storage data traffic.
-#storage_net_name:
+storage_net_name: internal
 
 # Name of the network used to carry storage management traffic.
 #storage_mgmt_net_name:
@@ -118,22 +119,33 @@
 # provision_wl_net_vlan:
 # provision_wl_net_mtu:
 # provision_wl_net_routes:
-
-# Internal network IP information.
-# internal_net_vip_address:
+#
 # internal_net_fqdn:
-# internal_net_cidr:
+admin_cidr: 172.16.0.0/24
 # internal_net_allocation_pool_start:
 # internal_net_allocation_pool_end:
-# internal_net_gateway:
+admin_gateway: 172.16.0.1
+
+
+
+# Internal network IP information.
+internal_vip_address: 172.16.0.199
+# internal_net_fqdn:
+internal_cidr: 172.16.0.0/24
+# internal_net_allocation_pool_start:
+# internal_net_allocation_pool_end:
+internal_neutron_allocation_pool_start: 172.16.0.150
+internal_neutron_allocation_pool_end: 172.16.0.190
+
+# internal_gateway: 172.16.0.1
 # internal_net_vlan:
 # internal_net_mtu:
 # internal_net_routes:
 
 # External network IP information.
-# external_net_vip_address:
+# external_vip_address: 10.0.0.1
 # external_net_fqdn:
-# external_net_cidr:
+# external_cidr: 10.0.0.0/24
 # external_net_allocation_pool_start:
 # external_net_allocation_pool_end:
 # external_net_neutron_allocation_pool_start:

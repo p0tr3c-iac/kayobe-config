@@ -3,10 +3,10 @@
 # OpenStack release configuration.
 
 # Name of the current OpenStack release. Default is "victoria".
-#openstack_release:
+openstack_release: victoria
 
 # Name of the current OpenStack branch. Default is "stable/victoria".
-#openstack_branch:
+openstack_branch: stable/victoria
 
 ###############################################################################
 # Dummy variable to allow Ansible to accept this file.

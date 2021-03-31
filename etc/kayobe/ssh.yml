@@ -3,13 +3,13 @@
 # SSH configuration.
 
 # Name of SSH key.
-#ssh_key_name:
+ssh_key_name: openstack
 
 # Path to SSH private key on the Ansible control host.
-#ssh_private_key_path:
+ssh_private_key_path: ~/.ssh/openstack.pkey
 
 # Path to SSH public key on the Ansible control host.
-#ssh_public_key_path:
+ssh_public_key_path: ~/.ssh/openstack.pkey.pub
 
 ###############################################################################
 # Dummy variable to allow Ansible to accept this file.
