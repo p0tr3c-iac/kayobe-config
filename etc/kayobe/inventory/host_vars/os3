@@ -1,6 +1,7 @@
 ---
 #external_interface: enp3s0f1
 admin_interface: enp3s0f0
+storage_interface: enp3s0f1
 internal_interface: breth0
 internal_bridge_ports:
   - enp4s0f0

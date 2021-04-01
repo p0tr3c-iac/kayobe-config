@@ -41,16 +41,16 @@ public_net_name: internal
 #tunnel_net_name:
 
 # Name of the network used to carry storage data traffic.
-storage_net_name: internal
+storage_net_name: storage
 
 # Name of the network used to carry storage management traffic.
-#storage_mgmt_net_name:
+storage_mgmt_net_name: storage
 
 # Name of the network used to carry swift storage data traffic.
-#swift_storage_net_name:
+swift_storage_net_name: storage
 
 # Name of the network used to carry swift storage replication traffic.
-#swift_storage_replication_net_name:
+swift_storage_replication_net_name: storage
 
 # Name of the network used to perform hardware introspection on the bare metal
 # workload hosts.
@@ -156,7 +156,7 @@ internal_neutron_allocation_pool_end: 172.16.0.190
 # external_net_routes:
 
 # Storage network IP information.
-# storage_net_cidr:
+storage_cidr: 10.0.0.0/24
 # storage_net_allocation_pool_start:
 # storage_net_allocation_pool_end:
 # storage_net_gateway:

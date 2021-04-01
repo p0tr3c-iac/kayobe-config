@@ -23,6 +23,10 @@ os3 ansible_host=172.16.0.103 ansible_ssh_user=p0tr3c ansible_become=true ansibl
 [compute:children]
 controllers
 
+[storage]
+os1
+os2
+
 [baremetal-compute]
 # Add baremetal compute nodes here if required.
 
