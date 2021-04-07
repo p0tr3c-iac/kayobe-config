@@ -9,22 +9,22 @@ admin_oc_net_name: admin
 
 # Name of the network used by the seed to manage the bare metal overcloud
 # hosts via their out-of-band management controllers.
-oob_oc_net_name: internal
+oob_oc_net_name: cloud
 
 # Name of the network used by the seed to provision the bare metal overcloud
 # hosts.
-provision_oc_net_name: internal
+provision_oc_net_name: cloud
 
 # Name of the network used by the overcloud hosts to manage the bare metal
 # compute hosts via their out-of-band management controllers.
-oob_wl_net_name: internal
+oob_wl_net_name: cloud
 
 # Name of the network used by the overcloud hosts to provision the bare metal
 # workload hosts.
-provision_wl_net_name: internal
+provision_wl_net_name: cloud
 
 # Name of the network used to expose the internal OpenStack API endpoints.
-internal_net_name: internal
+internal_net_name: cloud
 
 # List of names of networks used to provide external network access via
 # Neutron.
@@ -32,33 +32,34 @@ internal_net_name: internal
 # If external_net_name is defined, external_net_names will default to a list
 # containing one item, external_net_name.
 external_net_names: 
-  - internal
+  - external
+  - cloud
 
 # Name of the network used to expose the public OpenStack API endpoints.
-public_net_name: internal
+public_net_name: cloud
 
 # Name of the network used by Neutron to carry tenant overlay network traffic.
-#tunnel_net_name:
+tunnel_net_name: cloud
 
 # Name of the network used to carry storage data traffic.
-storage_net_name: storage
+storage_net_name: cloud
 
 # Name of the network used to carry storage management traffic.
-storage_mgmt_net_name: storage
+storage_mgmt_net_name: cloud
 
 # Name of the network used to carry swift storage data traffic.
-swift_storage_net_name: storage
+swift_storage_net_name: cloud
 
 # Name of the network used to carry swift storage replication traffic.
-swift_storage_replication_net_name: storage
+swift_storage_replication_net_name: cloud
 
 # Name of the network used to perform hardware introspection on the bare metal
 # workload hosts.
-#inspection_net_name:
+inspection_net_name: cloud
 
 # Name of the network used to perform cleaning on the bare metal workload
 # hosts
-#cleaning_net_name:
+cleaning_net_name: cloud
 
 ###############################################################################
 # Network definitions.
@@ -121,21 +122,18 @@ swift_storage_replication_net_name: storage
 # provision_wl_net_routes:
 #
 # internal_net_fqdn:
-admin_cidr: 172.16.0.0/24
-# internal_net_allocation_pool_start:
-# internal_net_allocation_pool_end:
-admin_gateway: 172.16.0.1
-
-
+admin_cidr: 10.0.0.0/24
+admin_allocation_pool_start: 10.0.0.100
+admin_allocation_pool_end: 10.0.0.109
+admin_gateway: 10.0.0.1
 
 # Internal network IP information.
-internal_vip_address: 172.16.0.199
-# internal_net_fqdn:
-internal_cidr: 172.16.0.0/24
-# internal_net_allocation_pool_start:
-# internal_net_allocation_pool_end:
-internal_neutron_allocation_pool_start: 172.16.0.150
-internal_neutron_allocation_pool_end: 172.16.0.190
+cloud_cidr: 10.0.0.0/24
+cloud_vip_address: 10.0.0.200
+cloud_allocation_pool_start: 100.0.0.110
+cloud_allocation_pool_end: 100.1.0.119
+cloud_neutron_allocation_pool_start: 10.1.0.120
+cloud_neutron_allocation_pool_end: 10.1.0.199
 
 # internal_gateway: 172.16.0.1
 # internal_net_vlan:
@@ -156,13 +154,11 @@ internal_neutron_allocation_pool_end: 172.16.0.190
 # external_net_routes:
 
 # Storage network IP information.
-storage_cidr: 10.0.0.0/24
-# storage_net_allocation_pool_start:
-# storage_net_allocation_pool_end:
-# storage_net_gateway:
-# storage_net_vlan:
-# storage_net_mtu:
-# storage_net_routes:
+external_cidr: 172.16.0.0/24
+external_allocation_pool_start: 172.16.0.100
+external_allocation_pool_end: 172.16.0.109
+external_neutron_allocation_pool_start: 172.16.0.110
+external_neutron_allocation_pool_end: 172.16.0.199
 
 # Storage management network IP information.
 # storage_mgmt_net_cidr:

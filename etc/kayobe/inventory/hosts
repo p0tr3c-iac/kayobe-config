@@ -16,9 +16,9 @@ localhost ansible_connection=local
 [controllers]
 # Add controller nodes here if required. These hosts will provide the
 # OpenStack overcloud.
-os1 ansible_host=172.16.0.101 ansible_ssh_user=p0tr3c ansible_become=true ansible_ssh_private_key_file=~/.ssh/openstack.pkey 
-os2 ansible_host=172.16.0.102 ansible_ssh_user=p0tr3c ansible_become=true ansible_ssh_private_key_file=~/.ssh/openstack.pkey 
-os3 ansible_host=172.16.0.103 ansible_ssh_user=p0tr3c ansible_become=true ansible_ssh_private_key_file=~/.ssh/openstack.pkey 
+os1 ansible_host=10.0.0.101 ansible_ssh_user=p0tr3c ansible_become=true ansible_ssh_private_key_file=~/.ssh/openstack.pkey 
+os2 ansible_host=10.0.0.102 ansible_ssh_user=p0tr3c ansible_become=true ansible_ssh_private_key_file=~/.ssh/openstack.pkey 
+os3 ansible_host=10.0.0.103 ansible_ssh_user=p0tr3c ansible_become=true ansible_ssh_private_key_file=~/.ssh/openstack.pkey 
 
 [compute:children]
 controllers
