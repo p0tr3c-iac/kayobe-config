@@ -31,6 +31,9 @@ controllers
 [storage]
 # Empty group to provide declaration of storage group.
 
+[designate]
+# Custom group to privide declaration of designate group
+
 [compute]
 # Empty group to provide declaration of compute group.
 
@@ -40,6 +43,7 @@ network
 monitoring
 storage
 compute
+designate
 
 ###############################################################################
 # Docker groups.

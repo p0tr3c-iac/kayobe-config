@@ -27,6 +27,9 @@ controllers
 os1
 os2
 
+[designate]
+os1
+
 [baremetal-compute]
 # Add baremetal compute nodes here if required.
 

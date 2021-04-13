@@ -36,7 +36,7 @@ external_net_names:
   - cloud
 
 # Name of the network used to expose the public OpenStack API endpoints.
-public_net_name: cloud
+public_net_name: external
 
 # Name of the network used by Neutron to carry tenant overlay network traffic.
 tunnel_net_name: cloud
@@ -155,7 +155,8 @@ cloud_neutron_allocation_pool_end: 10.1.0.199
 
 # Storage network IP information.
 external_cidr: 172.16.0.0/24
-external_allocation_pool_start: 172.16.0.100
+external_vip_address: 172.16.0.100
+external_allocation_pool_start: 172.16.0.101
 external_allocation_pool_end: 172.16.0.109
 external_neutron_allocation_pool_start: 172.16.0.110
 external_neutron_allocation_pool_end: 172.16.0.199

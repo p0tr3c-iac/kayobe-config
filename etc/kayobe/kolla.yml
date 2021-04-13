@@ -137,7 +137,7 @@ kolla_base_distro: centos
 
 # Custom overcloud inventory containing a mapping from components to top level
 # groups.
-#kolla_overcloud_inventory_custom_components:
+kolla_overcloud_inventory_custom_components: "{{ lookup('template', kayobe_config_path ~ '/kolla/inventory/overcloud-components.j2') }}"
 
 # Custom overcloud inventory containing a mapping from services to components.
 #kolla_overcloud_inventory_custom_services:
@@ -151,7 +151,26 @@ kolla_base_distro: centos
 # * groups: A list of kayobe ansible groups to map to this kolla-ansible group.
 # * vars: A dict mapping variable names to values for hosts in this
 #         kolla-ansible group.
-#kolla_overcloud_inventory_top_level_group_map:
+kolla_overcloud_inventory_top_level_group_map:
+  control:
+    groups:
+      - controllers
+  network:
+    groups:
+      - network
+  compute:
+    groups:
+      - compute
+  monitoring:
+    groups:
+      - monitoring
+  storage:
+    groups:
+      "{{ kolla_overcloud_inventory_storage_groups }}"
+  designate:
+    groups:
+      - designate
+
 
 # List of names of top level kolla-ansible groups. Any of these groups which
 # have no hosts mapped to them will be provided with an empty group definition.
@@ -225,7 +244,7 @@ kolla_base_distro: centos
 #kolla_enable_cloudkitty:
 #kolla_enable_collectd:
 #kolla_enable_cyborg:
-#kolla_enable_designate:
+kolla_enable_designate: yes
 #kolla_enable_destroy_images:
 #kolla_enable_elasticsearch:
 #kolla_enable_etcd:
@@ -240,7 +259,7 @@ kolla_enable_horizon: yes
 #kolla_enable_horizon_blazar:
 #kolla_enable_horizon_cloudkitty:
 #kolla_enable_horizon_congress:
-#kolla_enable_horizon_designate:
+kolla_enable_horizon_designate: yes
 #kolla_enable_horizon_freezer:
 #kolla_enable_horizon_heat:
 #kolla_enable_horizon_ironic:
@@ -315,7 +334,7 @@ kolla_enable_openstack_core: yes
 #kolla_enable_qdrouterd:
 #kolla_enable_rabbitmq:
 #kolla_enable_rally:
-#kolla_enable_redis:
+kolla_enable_redis: yes
 #kolla_enable_sahara:
 #kolla_enable_senlin:
 #kolla_enable_skydive:

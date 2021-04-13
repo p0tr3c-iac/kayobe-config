@@ -1,6 +1,5 @@
 ---
 # Add extra Kolla global configuration here.
-# octavia_network_interface: breth1
 octavia_amp_network:
   name: lb-mgmt-net
   provider_network_type: flat
@@ -14,3 +13,6 @@ octavia_amp_network:
     allocation_pool_end: "10.0.0.199"
     gateway_ip: "10.0.0.1"
     enable_dhcp: yes
+dns_interface: breth1
+designate_ns_record: "openstack.pwnbox.io"
+neutron_dnsmasq_dns_servers: "172.16.0.101,1.1.1.1,8.8.8.8,8.8.4.4"
