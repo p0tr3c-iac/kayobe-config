@@ -43,3 +43,4 @@ etc/kayobe/inventory/group_vars/seed/ansible-host
 etc/kolla
 etc/kayobe/kolla/config/swift/*
 etc/kayobe/kolla/config/octavia/*
+ca/*
